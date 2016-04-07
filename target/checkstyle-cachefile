@@ -1,9 +1,9 @@
-#Thu Apr 07 23:35:31 EEST 2016
+#Thu Apr 07 23:48:22 EEST 2016
 /home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/io/ConsoleIO.java=1460053658000
-/home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/io/StubIO.java=1459437979000
 /home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/App.java=1460055608000
+/home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/io/StubIO.java=1459437979000
 /home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/data_access/UserDao.java=1459437979000
 /home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/domain/User.java=1460055851000
-configuration*?=3AFD9E7B4EB51547B68B72DD61902DA1B8CF0D1E
-/home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/io/IO.java=1459437979000
 /home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/data_access/InMemoryUserDao.java=1460054040000
+/home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/io/IO.java=1459437979000
+configuration*?=3AFD9E7B4EB51547B68B72DD61902DA1B8CF0D1E
