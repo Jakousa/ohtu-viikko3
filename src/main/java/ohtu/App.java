@@ -1,5 +1,6 @@
 package ohtu;
 
+import ohtu.data_access.FileUserDao;
 import ohtu.data_access.InMemoryUserDao;
 import ohtu.data_access.UserDao;
 import ohtu.io.ConsoleIO;
@@ -67,7 +68,7 @@ public class App {
 
     public static void main(String[] args) {
         ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/resources/spring-context.xml");
-
+        UserDao dao = ctx.getBean(FileUserDao.class);
         App application = ctx.getBean(App.class);
         application.run();
 //        UserDao dao = new InMemoryUserDao();
