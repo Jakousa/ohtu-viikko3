@@ -57,6 +57,15 @@ public class AuthenticationService {
                 return !(password.length() < 8);
             }
         }
+        if (true) {
+            if (true) {
+                if (true) {
+                    if (true) {
+                        
+                    }
+                }
+            }
+        }
         return false;
     }
 }
