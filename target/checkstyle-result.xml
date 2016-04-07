@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.4">
+<file name="/home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/io/IO.java">
+</file>
+<file name="/home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/io/ConsoleIO.java">
+</file>
+<file name="/home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/io/StubIO.java">
+</file>
+<file name="/home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/App.java">
+</file>
+<file name="/home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/data_access/UserDao.java">
+</file>
+<file name="/home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/data_access/InMemoryUserDao.java">
+</file>
+<file name="/home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/domain/User.java">
+</file>
+<file name="/home/hatchy/Documents/Ohtua/ohtu2016/viikko3/LoginEasyBv1/src/main/java/ohtu/services/AuthenticationService.java">
+<error line="54" column="5" severity="error" message="Cyclomatic Complexity is 8 (max allowed is 3)." source="com.puppycrawl.tools.checkstyle.checks.metrics.CyclomaticComplexityCheck"/>
+<error line="54" column="5" severity="error" message="Method length is 19 lines (max allowed is 10)." source="com.puppycrawl.tools.checkstyle.checks.sizes.MethodLengthCheck"/>
+<error line="62" column="17" severity="error" message="Nested if-else depth is 2 (max allowed is 1)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+<error line="63" column="21" severity="error" message="Nested if-else depth is 3 (max allowed is 1)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+<error line="64" column="25" severity="error" message="Nested if-else depth is 4 (max allowed is 1)." source="com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck"/>
+</file>
+</checkstyle>
