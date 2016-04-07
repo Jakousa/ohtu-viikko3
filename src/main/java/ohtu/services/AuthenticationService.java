@@ -18,22 +18,18 @@ public class AuthenticationService {
     }
 
     public boolean logIn(String username, String password) {
+        User vertailu = new User(username, password);
         for (User user : userDao.listAll()) {
-            if (user.getUsername().equals(username)
-                    && user.getPassword().equals(password)) {
+            if (user.equals(vertailu)) {
                 return true;
             }
         }
-
         return false;
     }
 
     public boolean createUser(String username, String password) {
-        if (userDao.findByName(username) != null) {
-            return false;
-        }
-
-        if (invalid(username, password)) {
+        if (userDao.findByName(username) != null
+                || invalid(username, password)) {
             return false;
         }
 
@@ -44,20 +40,23 @@ public class AuthenticationService {
 
     private boolean invalid(String username, String password) {
         // validity check of username and password
+        
+        return !(kayttajanimiOk(username) && salasanaOk(password));
+    }
+
+    private boolean kayttajanimiOk(String username) {
         if (username.length() < 3) {
-            return true;
+            return false;
         }
-        if (password.length() < 8) {
-            return true;
-        }
-        if (!username.matches(".*[a-z].*") ) { 
-            return true;
-        }
+        return username.matches(".*[a-z].*");
+    }
+
+    private boolean salasanaOk(String password) {
         for (char c : password.toCharArray()) {
             if (!Character.isAlphabetic(c)) {
-                return false;
+                return !(password.length() < 8);
             }
         }
-        return true;
+        return false;
     }
 }
