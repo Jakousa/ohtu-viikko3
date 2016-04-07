@@ -18,31 +18,26 @@ import ohtu.domain.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
-public class FileUserDao implements UserDao{
+public class FileUserDao implements UserDao {
+
     File tiedot;
-    
+
     public FileUserDao(String tiedosto) throws Exception {
         tiedot = new File(tiedosto);
     }
-    
-    private void kirjoita(String rivi) throws Exception{
-        FileWriter kirjoittaja = new FileWriter(tiedot,true);
+
+    private void kirjoita(String rivi) throws Exception {
+        FileWriter kirjoittaja = new FileWriter(tiedot, true);
         kirjoittaja.append(rivi);
         kirjoittaja.close();
     }
-    
+
     @Override
     public List<User> listAll() {
-        Scanner lukija = null;
-        try {
-            lukija = new Scanner(tiedot);
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(FileUserDao.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        List<User> kayttajat = new ArrayList<User>(); 
+        Scanner lukija = teelukija();
+        List<User> kayttajat = new ArrayList<User>();
         while (lukija.hasNextLine()) {
-            String rivi = lukija.nextLine();
-            String[] osat = rivi.split("\\:");
+            String[] osat = paloittelija(lukija);
             User lisattava = new User(osat[0], osat[1]);
             kayttajat.add(lisattava);
         }
@@ -51,20 +46,30 @@ public class FileUserDao implements UserDao{
 
     @Override
     public User findByName(String name) {
+        Scanner lukija = teelukija();
+        while (lukija.hasNextLine()) {
+            String[] osat = paloittelija(lukija);
+            if (osat[0].equals(name)) {
+                return new User(osat[0], osat[1]);
+            }
+        }
+        return null;
+    }
+
+    private String[] paloittelija(Scanner lukija) {
+        String rivi = lukija.nextLine();
+        String[] osat = rivi.split("\\:");
+        return osat;
+    }
+
+    private Scanner teelukija() {
         Scanner lukija = null;
         try {
             lukija = new Scanner(tiedot);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(FileUserDao.class.getName()).log(Level.SEVERE, null, ex);
         }
-        while (lukija.hasNextLine()) {
-            String rivi = lukija.nextLine();
-            String[] osat = rivi.split("\\:");
-            if (osat[0].equals(name)) {
-                return new User(osat[0], osat[1]);
-            }
-        }
-        return null;
+        return lukija;
     }
 
     @Override
