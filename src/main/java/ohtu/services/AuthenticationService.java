@@ -54,7 +54,7 @@ public class AuthenticationService {
     private boolean salasanaOk(String password) {
         for (char c : password.toCharArray()) {
             if (!Character.isAlphabetic(c)) {
-                return (password.length() < 8);
+                return !(password.length() < 8);
             }
         }
         return false;
