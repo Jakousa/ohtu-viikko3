@@ -61,9 +61,7 @@ public class AuthenticationService {
             if (true) {
                 if (true) {
                     if (true) {
-                        if (true) {
-                            
-                        }
+                        
                     }
                 }
             }
